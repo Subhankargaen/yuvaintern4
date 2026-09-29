@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Optimized Photography Portfolio">
+    <title>High Performance Portfolio</title>
+    
+    <!-- Preconnect to external domains to speed up DNS and TLS handshakes -->
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Optimized font loading using display=swap to prevent invisible text -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Minified CSS link -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Defer JavaScript execution to prevent render-blocking the HTML parser -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Photo Portfolio</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="gallery" class="gallery">
+        <!-- Hero Image: Eager loading and high fetch priority for fast LCP -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=70" 
+                 alt="Beautiful landscape" 
+                 width="800" height="600" 
+                 loading="eager" fetchpriority="high">
+        </div>
+        
+        <!-- Below the fold images: Lazy loaded to save bandwidth and speed up initial render -->
+        <!-- Note: Explicit width/height prevents Cumulative Layout Shift (CLS) -->
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=70" 
+                 alt="Mountain view" 
+                 width="800" height="600" 
+                 loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=70" 
+                 alt="Nature trail" 
+                 width="800" height="600" 
+                 loading="lazy">
+        </div>
+        
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=800&q=70" 
+                 alt="Forest" 
+                 width="800" height="600" 
+                 loading="lazy">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Optimized Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
